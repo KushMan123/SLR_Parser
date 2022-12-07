@@ -3,9 +3,8 @@ import Button from "./Button";
 import ColInput from "./ColInput";
 import InlineInput from "./InlineInput";
 
-const Input = () => {
+const Input = (props) => {
 	const [productionNo, setProductionNo] = useState(0);
-	const [rules, setRules] = useState([]);
 
 	const colInputRef = useRef();
 
@@ -14,9 +13,21 @@ const Input = () => {
 	}
 
 	function handleClick() {
-		setRules(colInputRef.current.dummy());
-		console.log(rules);
+		const data = colInputRef.current.dummy();
+		console.log(data);
+		// fetch("http://9c7d-113-199-231-152.ngrok.io/add-grammar", {
+		// 	method: "POST",
+		// 	headers: {
+		// 		Accept: "application/json",
+		// 		"Content-Type": "application/json",
+		// 	},
+		// 	body: JSON.stringify({ data: data }),
+		// }).then((res) => {
+		// 	console.log(res);
+		// });
+		props.handleFunction();
 	}
+
 	return (
 		<div class='input'>
 			<div class='block-title'>Write your Grammar</div>

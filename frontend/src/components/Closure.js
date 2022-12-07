@@ -1,55 +1,44 @@
-import React from "react";
+import React, { Fragment, useEffect, useState } from "react";
 
-const Closure = () => {
-	return (
-		<div class='closure-set'>
-			<div class='block-title'>SLR Closure Table</div>
-			<table class='table' border='1'>
-				<thead>
-					<tr>
-						<th>Goto</th>
-						<th>Kernel</th>
-						<th>State</th>
-						<th>Closure</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td></td>
-						<td>{"{S’ -> .S}"}</td>
-						<td>0</td>
-						<td>
-							{"{S’ -> .S; S -> .L = R; S -> .R; L -> .* R; L -> .id; R -> .L}"}
-						</td>
-					</tr>
-					<tr>
-						<td>goto(0, S)</td>
-						<td>{"{S’ -> S.}"}</td>
-						<td>1</td>
-						<td>{"{S’ -> S.}"}</td>
-					</tr>
-					<tr>
-						<td>goto(0, L)</td>
-						<td>{"{S -> L.= R; R -> L.}"}</td>
-						<td>2</td>
-						<td>{"{S -> L.= R; R -> L.}"}</td>
-					</tr>
-					<tr>
-						<td>goto(0, R)</td>
-						<td>{"{S -> R.}"}</td>
-						<td>3</td>
-						<td>{"{S -> R.}"}</td>
-					</tr>
-					<tr>
-						<td>goto(0, *)</td>
-						<td>{"{L -> *.R}"}</td>
-						<td>4</td>
-						<td>{"{L -> *.R; R -> .L; L -> .* R; L -> .id}"}</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	);
+const Closure = (props) => {
+	const [data, setData] = useState([]);
+
+	useEffect(() => {
+		console.log(props.closureData);
+		setData([props.closureData]);
+	}, [props.closureData]);
+
+	function RenderContent() {
+		console.log(Object.keys(data).length);
+		if (data.length === 0) {
+			return <div>Loading</div>;
+		} else {
+			return (
+				<div class='closure-set'>
+					<div class='block-title'>SLR Closure Table</div>
+					<table class='table' border='1'>
+						<thead>
+							<tr>
+								<th>State</th>
+								<th>Closure</th>
+							</tr>
+						</thead>
+						<tbody>
+							{Object.keys(data[0]).map((i) => {
+								return (
+									<tr>
+										<td>{i}</td>
+										<td>{`{${data[0][i]}}`}</td>
+									</tr>
+								);
+							})}
+						</tbody>
+					</table>
+				</div>
+			);
+		}
+	}
+	return <Fragment>{RenderContent()}</Fragment>;
 };
 
 export default Closure;
