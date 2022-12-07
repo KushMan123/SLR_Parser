@@ -1,0 +1,131 @@
+import React from "react";
+
+const ParsingTable = () => {
+	return (
+		<div class='parsing-table'>
+			<div class='block-title'>parsing-table</div>
+			<table class='table' border='1'>
+				<thead>
+					<tr>
+						<th rowspan='2'>State</th>
+						<th colspan='4'>Action</th>
+						<th colspan='4'>Goto</th>
+					</tr>
+					<tr>
+						<th>=</th>
+						<th>*</th>
+						<th>id</th>
+						<th>$</th>
+						<th>S'</th>
+						<th>S</th>
+						<th>L</th>
+						<th>R</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>0</td>
+						<td></td>
+						<td>s4</td>
+						<td>s5</td>
+						<td></td>
+						<td></td>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>0</td>
+						<td></td>
+						<td>s4</td>
+						<td>s5</td>
+						<td></td>
+						<td></td>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>0</td>
+						<td></td>
+						<td>s4</td>
+						<td>s5</td>
+						<td></td>
+						<td></td>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>0</td>
+						<td></td>
+						<td>s4</td>
+						<td>s5</td>
+						<td></td>
+						<td></td>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>0</td>
+						<td></td>
+						<td>s4</td>
+						<td>s5</td>
+						<td></td>
+						<td></td>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>0</td>
+						<td></td>
+						<td>s4</td>
+						<td>s5</td>
+						<td></td>
+						<td></td>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>0</td>
+						<td></td>
+						<td>s4</td>
+						<td>s5</td>
+						<td></td>
+						<td></td>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>0</td>
+						<td></td>
+						<td>s4</td>
+						<td>s5</td>
+						<td></td>
+						<td></td>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>0</td>
+						<td></td>
+						<td>s4</td>
+						<td>s5</td>
+						<td></td>
+						<td></td>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	);
+};
+
+export default ParsingTable;
